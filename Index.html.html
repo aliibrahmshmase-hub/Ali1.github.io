@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy 17th Birthday Hiba! 🎂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at 30% 30%, #fdd0f5, #9f7aea);
+            background-attachment: fixed;
+            font-family: 'Segoe UI', 'Quicksand', system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* festive wallpaper elements: confetti, balloons, sparkles */
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 12px;
+            height: 22px;
+            background: #ffd166;
+            opacity: 0.7;
+            top: -10%;
+            border-radius: 2px 8px 2px 8px;
+            transform: rotate(15deg);
+            animation: fall linear infinite;
+        }
+
+        .confetti-piece:nth-child(1) { left: 7%; background: #06d6a0; animation-duration: 6s; animation-delay: 0s; }
+        .confetti-piece:nth-child(2) { left: 15%; background: #ffb347; animation-duration: 8s; animation-delay: 1s; width: 8px; height: 16px; }
+        .confetti-piece:nth-child(3) { left: 25%; background: #ff4d6d; animation-duration: 7s; animation-delay: 0.5s; width: 14px; height: 20px; }
+        .confetti-piece:nth-child(4) { left: 35%; background: #8338ec; animation-duration: 9s; animation-delay: 2s; transform: rotate(-10deg); }
+        .confetti-piece:nth-child(5) { left: 45%; background: #3a86ff; animation-duration: 5.5s; animation-delay: 0.2s; width: 10px; height: 18px; }
+        .confetti-piece:nth-child(6) { left: 55%; background: #fb5607; animation-duration: 8.2s; animation-delay: 1.3s; }
+        .confetti-piece:nth-child(7) { left: 65%; background: #ff006e; animation-duration: 6.7s; animation-delay: 0.8s; width: 9px; height: 24px; }
+        .confetti-piece:nth-child(8) { left: 75%; background: #ffbe0b; animation-duration: 7.8s; animation-delay: 2.5s; }
+        .confetti-piece:nth-child(9) { left: 82%; background: #a2d2ff; animation-duration: 5.2s; animation-delay: 0.1s; width: 13px; height: 17px; }
+        .confetti-piece:nth-child(10) { left: 92%; background: #b5838d; animation-duration: 9.5s; animation-delay: 1.8s; }
+
+        @keyframes fall {
+            0% { top: -10%; opacity: 0.9; transform: rotate(0deg); }
+            100% { top: 110%; opacity: 0.2; transform: rotate(360deg); }
+        }
+
+        .balloon {
+            position: fixed;
+            bottom: -10%;
+            right: 2%;
+            font-size: 5rem;
+            opacity: 0.5;
+            animation: float 12s ease-in-out infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .balloon-left {
+            left: 2%;
+            right: auto;
+            font-size: 6rem;
+            animation-duration: 14s;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30vh) rotate(10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        .sparkle {
+            position: fixed;
+            top: 15%;
+            left: 10%;
+            font-size: 2rem;
+            opacity: 0.7;
+            animation: twinkle 3s infinite alternate;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .sparkle2 {
+            top: 70%;
+            right: 12%;
+            left: auto;
+            font-size: 2.5rem;
+            animation-delay: 1s;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* main card */
+        .birthday-card {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+            border-radius: 3rem 3rem 2rem 2rem;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2), 0 0 0 4px rgba(255, 245, 220, 0.6);
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .birthday-card:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #7303c0, #ffb199);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 4px 4px 0 #ffe5f1;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .sub {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2b1b3a;
+            background: rgba(255, 255, 255, 0.5);
+            display: inline-block;
+            padding: 0.4rem 1.8rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid white;
+        }
+
+        /* cake container */
+        .cake-section {
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 60px;
+            padding: 2rem 1rem 1.5rem 1rem;
+            margin: 1.2rem 0;
+            box-shadow: inset 0 -5px 0 rgba(0,0,0,0.1);
+        }
+
+        .cake {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            filter: drop-shadow(0 15px 10px rgba(0, 0, 0, 0.2));
+        }
+
+        .candle {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: -0.5rem;
+        }
+
+        .flame {
+            width: 28px;
+            height: 50px;
+            background: radial-gradient(circle at 50% 0%, #ffaa00, #ff7b00);
+            border-radius: 50% 50% 20% 20%;
+            transform: scale(1.2);
+            animation: flicker 0.4s infinite alternate;
+            transform-origin: top;
+            box-shadow: 0 -5px 20px #ffb347;
+        }
+
+        .flame:nth-child(2) {
+            animation-delay: 0.2s;
+            background: radial-gradient(circle at 50% 0%, #ffe570, #ff8c00);
+        }
+
+        @keyframes flicker {
+            0% { transform: scaleY(1) scaleX(1); opacity: 0.9; }
+            100% { transform: scaleY(1.15) scaleX(0.9); opacity: 1; }
+        }
+
+        .candle-body {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            margin: 0.2rem 0 0.5rem;
+        }
+
+        .candle-stick {
+            width: 20px;
+            height: 70px;
+            background: linear-gradient(130deg, #f8f0e7, #f5d7b5);
+            border-radius: 6px 6px 4px 4px;
+            border: 1px solid #ecc9a0;
+            box-shadow: 0 6px 0 #b38b60;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #b34e62;
+            padding-bottom: 5px;
+        }
+
+        .cake-layers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .layer {
+            background: linear-gradient(145deg, #fb9c9c, #fba6b6);
+            border-radius: 40px;
+            height: 55px;
+            width: 280px;
+            margin: 4px 0;
+            box-shadow: 0 8px 0 #b85c6b, 0 12px 10px rgba(0,0,0,0.2);
+            border: 2px solid #ffdab9;
+        }
+
+        .layer.middle {
+            background: linear-gradient(145deg, #fca3b7, #fc89ac);
+            width: 240px;
+            height: 60px;
+        }
+
+        .layer.top {
+            background: linear-gradient(145deg, #ffb3c6, #ff99bb);
+            width: 200px;
+            height: 50px;
+            border-radius: 40px 40px 20px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 8px 0 #b34e62, 0 10px 8px rgba(0,0,0,0.2);
+        }
+
+        .sprinkles {
+            font-size: 1.8rem;
+            letter-spacing: 10px;
+            line-height: 1;
+            color: #ffec99;
+            text-shadow: 0 2px 0 #d67070;
+        }
+
+        .age-badge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 2.5rem 0 1rem;
+            background: rgba(236, 216, 255, 0.7);
+            border-radius: 100px;
+            padding: 0.8rem 1.8rem;
+            backdrop-filter: blur(4px);
+            border: 2px dashed white;
+        }
+
+        .age-box {
+            background: #ffefff;
+            border-radius: 30px;
+            padding: 0.5rem 1.8rem;
+            font-size: 3.2rem;
+            font-weight: 800;
+            box-shadow: 0 8px 0 #c285b7;
+            color: #592e5c;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .age-box span {
+            font-size: 2rem;
+            vertical-align: super;
+        }
+
+        .arrow {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f15a5a;
+            filter: drop-shadow(2px 2px 0 white);
+            animation: pulseArrow 1.5s infinite;
+        }
+
+        @keyframes pulseArrow {
+            0% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.9; }
+        }
+
+        .sixteen {
+            background: #fbb9c4;
+            color: #5e2a3b;
+            box-shadow: 0 6px 0 #bc7180;
+        }
+
+        .seventeen {
+            background: #ffdb5c;
+            color: #2c1b54;
+            box-shadow: 0 6px 0 #cb9e2b;
+            border: 3px solid gold;
+        }
+
+        .message {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin: 2rem 0 1.5rem;
+            color: #2b0f2b;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 1rem;
+            border-radius: 60px;
+            line-height: 1.4;
+        }
+
+        .message span {
+            background: #ffecb3;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+        }
+
+        .footer-note {
+            font-size: 1.3rem;
+            color: #321d47;
+            background: #f9e3fd;
+            width: fit-content;
+            margin: 0.5rem auto 0;
+            padding: 0.3rem 2rem;
+            border-radius: 40px;
+            border: 2px solid white;
+        }
+
+        /* small decorations */
+        .heart {
+            position: absolute;
+            font-size: 1.8rem;
+            opacity: 0.5;
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            30% { transform: scale(1.2); }
+            50% { transform: scale(1); }
+        }
+
+        /* make sure everything is inside card above confetti */
+        .birthday-card * {
+            position: relative;
+            z-index: 15;
+        }
+    </style>
+</head>
+<body>
+    <!-- WALLPAPER effects: confetti + balloons + sparkles -->
+    <div class="confetti">
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+    </div>
+
+    <div class="balloon">🎈</div>
+    <div class="balloon balloon-left">🎈</div>
+    <div class="sparkle">✨</div>
+    <div class="sparkle sparkle2">🌟</div>
+
+    <!-- MAIN CARD -->
+    <main class="birthday-card">
+        <h1>🎂 HIBA! 🎂</h1>
+        <div class="sub">it's your 17th birthday</div>
+
+        <!-- CAKE with age on candles (1 and 7) -->
+        <div class="cake-section">
+            <div class="cake">
+                <!-- candle with flame and numbers on sticks -->
+                <div class="candle">
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                </div>
+                <div class="candle-body">
+                    <div class="candle-stick">1</div>
+                    <div class="candle-stick">7</div>
+                </div>
+
+                <!-- cake layers with sprinkles -->
+                <div class="cake-layers">
+                    <div class="layer top">
+                        <span class="sprinkles">✧ ✦ ✧</span>
+                    </div>
+                    <div class="layer middle"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+
+            <!-- visual age update from 16 ➔ 17 (kept for charm) -->
+            <div class="age-badge">
+                <div class="age-box sixteen">
+                    16<span>th</span>
+                </div>
+                <div class="arrow">➡️</div>
+                <div class="age-box seventeen">
+                    17<span>th</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- personal message and well wishes -->
+        <div class="message">
+            <span>Happy 17th Birthday, Hiba! 🎉</span><br>
+            🌸 You're officially 17 — embrace all the magic! 🦋
+        </div>
+
+        <div class="footer-note">
+            💖 enjoy your day! 💖
+        </div>
+
+        <!-- hidden love (just for decoration) -->
+        <div style="opacity:0.6; margin-top: 1.5rem; font-size: 1.8rem;">
+            🕯️🎈🎁🎈🕯️
+        </div>
+    </main>
+
+    <!-- floating hearts (extra wallpaper) -->
+    <div style="position: fixed; bottom: 10px; left: 5px; z-index: 5; font-size: 2rem;">💝</div>
+    <div style="position: fixed; top: 10px; right: 15px; z-index: 5; font-size: 2.5rem;">🌸</div>
+
+    <script>
+        (function() {
+            // just a playful easter egg: show alert with love, but unobtrusive after load
+            window.addEventListener('load', function() {
+                console.log("🎶 Happy birthday dear Hiba! 🎶");
+            });
+
+            // make the age change interactive? static but visible. 
+            // we can add a tiny spark: click on cake layers adds glow
+            const cakeDiv = document.querySelector('.cake');
+            const ageBoxes = document.querySelectorAll('.age-box');
+            cakeDiv.addEventListener('click', function() {
+                // playful: toggle a shadow on seventeen
+                document.querySelector('.seventeen').style.transform = 'scale(1.1)';
+                setTimeout(() => document.querySelector('.seventeen').style.transform = 'scale(1)', 200);
+            });
+
+            // also add a little extra floating message on first visit
+            // but we want quick and simple, no backend, just pure love.
+        })();
+    </script>
+
+    <!-- one more sparkle effect via css is enough, but inline style for extra balloon -->
+    <style>
+        /* additional smoothness for age transition */
+        .age-box {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .age-box:hover {
+            transform: translateY(-5px);
+        }
+        /* responsive */
+        @media (max-width: 500px) {
+            h1 { font-size: 3rem; }
+            .layer { width: 220px; }
+            .layer.middle { width: 190px; }
+            .layer.top { width: 160px; }
+            .age-box { font-size: 2.5rem; min-width: 90px; }
+        }
+    </style>
+</body>
+</html>
